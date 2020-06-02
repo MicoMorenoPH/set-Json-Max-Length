@@ -1,0 +1,16 @@
+public ActionResult LoadList(string stat, DateTime start,DateTime end){
+  return jsonResult(CS);
+}
+
+
+public JsonResult jsonResult(object data)
+{
+    return new JsonResult()
+    {
+        Data = data,
+        ContentType = "application/json",
+        ContentEncoding = Encoding.UTF8,
+        JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+        MaxJsonLength = Int32.MaxValue
+    };
+}
